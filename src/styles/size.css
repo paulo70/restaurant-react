@@ -1,0 +1,15 @@
+.padding-horizontal-mobile{
+  padding: 0 100px;
+}
+
+.padding-horizontal-sm{
+  padding: 0 150px;
+} 
+
+.padding-horizontal-md{
+  padding: 0 200px;
+}
+
+.padding-horizontal{
+  padding: 0 250px;
+}
