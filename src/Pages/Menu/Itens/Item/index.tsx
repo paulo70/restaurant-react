@@ -1,29 +1,38 @@
 import './item.css'
-const Item = () => {
+import data from '../data.json'
+import classNames from 'classnames'
+
+type IItemProps = typeof data[0]
+
+const Item = (props: IItemProps) => {
+  const { title, description, category, size, serving, price } = props
   return (
     <div className="item">
       <div className="item__image"></div>
       <div className="item__descricao">
         <div className="item__title">
-          <h2>Macarrao</h2>
-          <p>descricao do macarrao</p>
+          <h2>{title}</h2>
+          <p>{description}</p>
         </div>
       </div>
       <div className="item__tags">
-        <div className="item__types">
-          massa
+        <div className={classNames({
+          "item__types": true,
+          [`item__${category.label.toLocaleLowerCase()}`]: true
+        })}>
+          {category.label}
         </div>
         <div className="item__portion">
-          400g
+          {size}g
         </div>
         <div className="item__qtdperson">
-          Serve 2 pessoas
+          Serve {serving} pessoas
         </div>
         <div className="item__value">
-          R$ 50
+          R$ {price.toFixed(2)}
         </div>
       </div>
-    </div>
+    </div >
   )
 }
 

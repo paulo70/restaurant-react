@@ -1,6 +1,6 @@
 import { memo, useState } from "react"
 import Filters from "./Filters"
-import Item from "./Itens/Item"
+import Itens from "./Itens"
 import "./menu.css"
 import Order from "./Order"
 import Search from "./Search"
@@ -25,7 +25,7 @@ const Menu = () => {
           <Order order={order} setOrder={setOrder} />
         </div>
 
-        <Item />
+        <Itens />
       </section>
     </main>
   )

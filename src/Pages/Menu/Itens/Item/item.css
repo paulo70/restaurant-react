@@ -99,17 +99,17 @@
   font-size: 1.7rem;
 }
 
-.item .item__tags .item__types .item__massas {
+.item .item__tags .item__types.item__massas {
   background-color: #d73b3b;
   color: #fff;
 }
-.item .item__tags .item__types .item__carnes {
+.item .item__tags .item__types.item__carnes {
   background-color: #30201e;
   color: #fff;
 }
-.item .item__tags .item__types .item__combos {
+.item .item__tags .item__types.item__combos {
   background-color: #e6c864;
 }
-.item .item__tags .item__types .item__veganos {
+.item .item__tags .item__types.item__veganos {
   background-color: #80aa40;
 }
