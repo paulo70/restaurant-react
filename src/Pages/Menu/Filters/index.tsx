@@ -2,6 +2,7 @@ import React from 'react'
 import data from './data.json'
 import './filters.css'
 import classNames from 'classnames'
+import { memo } from 'react'
 
 type IFilter = typeof data[0]
 
@@ -34,4 +35,4 @@ const Filters = ({ filter, setFilter }: IFilterProps) => {
   )
 }
 
-export default Filters
+export default memo(Filters) 

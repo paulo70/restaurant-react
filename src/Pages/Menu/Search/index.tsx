@@ -1,4 +1,4 @@
-import React from "react"
+import React, { memo } from "react"
 import './search.css'
 import { CgSearch } from 'react-icons/cg'
 
@@ -12,6 +12,7 @@ const Search = ({ search, setSearch }: ISearchProps) => {
       <input
         value={search}
         onChange={(e) => setSearch(e.target.value)}
+        placeholder='buscar'
       />
       <CgSearch
         size={20}
@@ -21,4 +22,4 @@ const Search = ({ search, setSearch }: ISearchProps) => {
   )
 }
 
-export default Search
+export default memo(Search) 

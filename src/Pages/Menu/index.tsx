@@ -1,10 +1,13 @@
-import { useState } from "react"
+import { memo, useState } from "react"
 import Filters from "./Filters"
+import Item from "./Itens/Item"
 import "./menu.css"
+import Order from "./Order"
 import Search from "./Search"
 const Menu = () => {
   const [search, setSearch] = useState('')
   const [filter, setFilter] = useState<number | null>(null)
+  const [order, setOrder] = useState('')
   return (
     <main>
       <nav className="menu">Alulori</nav>
@@ -19,10 +22,13 @@ const Menu = () => {
 
         <div className="filters">
           <Filters filter={filter} setFilter={setFilter} />
+          <Order order={order} setOrder={setOrder} />
         </div>
+
+        <Item />
       </section>
     </main>
   )
 }
 
-export default Menu
+export default memo(Menu)
