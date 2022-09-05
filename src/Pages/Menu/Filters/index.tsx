@@ -1,6 +1,7 @@
 import React from 'react'
 import data from './data.json'
 import './filters.css'
+import classNames from 'classnames'
 
 type IFilter = typeof data[0]
 
@@ -12,6 +13,7 @@ interface IFilterProps {
 const Filters = ({ filter, setFilter }: IFilterProps) => {
 
   const selectFilter = (options: IFilter) => {
+    if (filter === options.id) return setFilter(null)
     return setFilter(options.id)
   }
 
@@ -19,7 +21,10 @@ const Filters = ({ filter, setFilter }: IFilterProps) => {
     <div className='filters'>
       {data.map((options) => (
         <button
-          className={`filters__button ${filter === options.id ? "active" : ""}`}
+          className={classNames({
+            "filters__button": true,
+            "active": filter === options.id
+          })}
           key={options.id}
           onClick={() => selectFilter(options)}>
           {options.label}
