@@ -5,10 +5,12 @@ import classNames from 'classnames'
 type IItemProps = typeof data[0]
 
 const Item = (props: IItemProps) => {
-  const { title, description, category, size, serving, price } = props
+  const { title, description, category, size, serving, price, photo } = props
   return (
     <div className="item">
-      <div className="item__image"></div>
+      <div className="item__image">
+        <img src={photo} alt={title} />
+      </div>
       <div className="item__descricao">
         <div className="item__title">
           <h2>{title}</h2>

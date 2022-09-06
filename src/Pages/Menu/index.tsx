@@ -25,7 +25,7 @@ const Menu = () => {
           <Order order={order} setOrder={setOrder} />
         </div>
 
-        <Itens />
+        <Itens search={search} filter={filter} order={order} />
       </section>
     </main>
   )
